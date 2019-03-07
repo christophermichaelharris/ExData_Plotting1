@@ -23,3 +23,6 @@ par(mfrow=c(1,1))
   
 kWGAP <- as.numeric(as.character(observations$GlobalActivePower))   ##Creates a new variable for the plot 
 hist(kWGAP, col = "red",main="Global Active Power",xlab="Gobal Active Power (kilowatts)")
+
+dev.copy(png,file="plot1.png",height=450,width=450)
+dev.off()
