@@ -18,7 +18,9 @@ if(!file.exists(filename)){      ##checks if file has already been downloaded
   
 }
 
+par(mfrow=c(1,1))
+
 kWGAP <- as.numeric(as.character(observations$GlobalActivePower))   ##Creates variable for the plot
 datetime <- as.POSIXct(paste(observations$Date,observations$Time))
-plot(datetime,kWGAP,col="white",ylab = "Global Active Power (kilowatts")
-lines(datetime,kWGAP)
+plot(datetime,kWGAP,type="l",ylab = "Global Active Power (kilowatts)",xlab="")
+

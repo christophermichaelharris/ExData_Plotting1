@@ -18,19 +18,32 @@ if(!file.exists(filename)){      ##checks if file has already been downloaded
   
 }
 
-par(mfrow=c(1,1))
+par(mfcol=c(2,2))   ##creates a plot with 2 columns and 2 rows
 
-##Combines the two columns Date and Time, reads and creates new variables for submetering 1 through 3
+##Repeat of plot2 as top left plot
+kWGAP <- as.numeric(as.character(observations$GlobalActivePower))   ##Creates variable for the plot
+datetime <- as.POSIXct(paste(observations$Date,observations$Time))
+plot(datetime,kWGAP,col="white",ylab = "Global Active Power (kilowatts)",xlab="")
+lines(datetime,kWGAP)
 
-
+##Repeat of plot3 as bottom left plot
 datetime <- as.POSIXct(paste(observations$Date,observations$Time))
 SM1 <- as.numeric(as.character(observations$SubMetering1))   
 SM2 <- as.numeric(as.character(observations$SubMetering2))   
 SM3 <- as.numeric(as.character(observations$SubMetering3))  
-
-
-##Plot the three sets of observations, removes the points, connects with lines
 plot(datetime,SM1,type="l",ylab="Energy sub metering",xlab="")
 lines(datetime,SM2,col="red")
 lines(datetime,SM3, col="blue")
-legend("topright",legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","red","blue"),lty=1)
+legend("topright",lty=1,legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","red","blue"),cex=.5)
+
+
+##Creates a new plot using voltage for top right graph
+Voltage <- as.numeric(as.character(observations$Voltage))
+plot(datetime,Voltage,col="white")
+lines(datetime,Voltage,col="black")
+
+##Creates a new plot using global reactive power for bottom right
+GlobReactPwr <- as.numeric(as.character(observations$GlobalReactivePower))
+plot(datetime,GlobReactPwr,col="white",ylab="Global_reactive_power")
+lines(datetime,GlobReactPwr,col="black")
+
