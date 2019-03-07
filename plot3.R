@@ -36,5 +36,5 @@ lines(datetime,SM3, col="blue")
 legend("topright",legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","red","blue"),lty=1)
 
 
-dev.copy(png,file="plot1.png",height=450,width=450)
+dev.copy(png,file="plot3.png",height=450,width=450)
 dev.off()
