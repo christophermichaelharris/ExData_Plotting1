@@ -25,5 +25,5 @@ datetime <- as.POSIXct(paste(observations$Date,observations$Time))
 plot(datetime,kWGAP,type="l",ylab = "Global Active Power (kilowatts)",xlab="")
 
 
-dev.copy(png,file="plot1.png",height=450,width=450)
+dev.copy(png,file="plot2.png",height=450,width=450)
 dev.off()
