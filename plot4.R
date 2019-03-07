@@ -48,5 +48,5 @@ plot(datetime,GlobReactPwr,col="white",ylab="Global_reactive_power")
 lines(datetime,GlobReactPwr,col="black")
 
 
-dev.copy(png,file="plot1.png",height=450,width=450)
+dev.copy(png,file="plot4.png",height=450,width=450)
 dev.off()
