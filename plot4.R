@@ -23,7 +23,7 @@ par(mfcol=c(2,2))   ##creates a plot with 2 columns and 2 rows
 ##Repeat of plot2 as top left plot
 kWGAP <- as.numeric(as.character(observations$GlobalActivePower))   ##Creates variable for the plot
 datetime <- as.POSIXct(paste(observations$Date,observations$Time))
-plot(datetime,kWGAP,col="white",ylab = "Global Active Power (kilowatts)",xlab="")
+plot(datetime,kWGAP,col="white",ylab = "Global Active Power",xlab="")
 lines(datetime,kWGAP)
 
 ##Repeat of plot3 as bottom left plot
@@ -34,7 +34,7 @@ SM3 <- as.numeric(as.character(observations$SubMetering3))
 plot(datetime,SM1,type="l",ylab="Energy sub metering",xlab="")
 lines(datetime,SM2,col="red")
 lines(datetime,SM3, col="blue")
-legend("topright",lty=1,legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","red","blue"),cex=.5)
+legend("topright",lty=1,legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","red","blue"),cex=.75,bty="n")
 
 
 ##Creates a new plot using voltage for top right graph
