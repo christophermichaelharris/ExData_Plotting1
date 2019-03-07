@@ -34,3 +34,7 @@ plot(datetime,SM1,type="l",ylab="Energy sub metering",xlab="")
 lines(datetime,SM2,col="red")
 lines(datetime,SM3, col="blue")
 legend("topright",legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black","red","blue"),lty=1)
+
+
+dev.copy(png,file="plot1.png",height=450,width=450)
+dev.off()
